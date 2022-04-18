@@ -1,0 +1,18 @@
+.header {
+    width: 100%;
+    background-color: #F5803B;
+}
+
+nav {
+    max-width: 1000px;
+    height: 100%;
+    padding: 15px 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    color: #F8F0EA;
+}
+
