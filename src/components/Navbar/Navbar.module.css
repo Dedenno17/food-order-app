@@ -10,6 +10,7 @@ nav {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 h1{
