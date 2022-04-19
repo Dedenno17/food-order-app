@@ -9,12 +9,15 @@
 }
 
 .meals-item div:first-child {
-    width: 20%;
+    width: 15%;
     overflow: hidden;
+    border-radius: 5px;
+    margin-right: 20px;
 }
 
 .meals-item div:first-child img {
-    width: 80%;
+    width: 100%;
+    transform: translateY(-10px);
 }
 
 .meals-item div:nth-child(2) {
