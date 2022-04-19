@@ -1,6 +1,7 @@
 .meals {
     max-width: 1000px;
-    margin: 50px auto 0;
+    margin: 50px auto 20px;
+    padding-bottom: 20px;
 }
 
 .meals ul {

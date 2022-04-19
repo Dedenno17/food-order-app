@@ -1,6 +1,10 @@
 .header {
     width: 100%;
     background-color: #F5803B;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 nav {
