@@ -1,12 +1,12 @@
 import classes from './Navbar.module.css';
 import NavbarCartButton from './NavbarCartButton';
 
-const Navbar = () => {
+const Navbar = props => {
     return (
         <header className={classes.header} >
             <nav>
                 <h1>FoodMeals</h1>
-                <NavbarCartButton />
+                <NavbarCartButton onClick={props.onShowModalCart}/>
             </nav>
         </header>
     );

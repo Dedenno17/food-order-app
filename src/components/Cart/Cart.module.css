@@ -1,0 +1,25 @@
+.cart {
+    width: 60%;
+    padding: 20px;
+}
+
+.cart ul {
+    list-style: none;
+    width: 100%;
+}
+
+.total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.btn {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.btn button:last-child {
+    margin-left: 20px;
+}

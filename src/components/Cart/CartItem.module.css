@@ -1,0 +1,39 @@
+.cart-item {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.price {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.price span {
+    display: block;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #F5803B;
+}
+
+.actions {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.actions button {
+    border: 1px solid #F5803B;
+    border-radius: 3px;
+    color: #F5803B;
+    padding: 5px;
+}
