@@ -10,7 +10,7 @@ const MealsItem = props => {
 
     const addOrderedMealsHandler = (amountValue) => {
         const newOrderedMeals = {
-            id : props.key,
+            id : props.id,
             name: props.name,
             totalPrice: props.price * amountValue,
             amount: amountValue
