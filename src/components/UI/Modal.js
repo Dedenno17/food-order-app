@@ -1,13 +1,21 @@
 import { createPortal } from 'react-dom';
 import { Fragment } from 'react';
+import { useDispatch } from 'react-redux';
+import { setModalCart } from '../../features/modalCart';
 
 import Card from './Card';
 import classes from './Modal.module.css';
 
 
 const Background = props => {
+
+    const dispatch = useDispatch();
+
     return (
-        <div className={classes.background}></div>
+        <div 
+            className={classes.background}
+            onClick={() => dispatch(setModalCart(false))}
+        ></div>
     );
 }
 

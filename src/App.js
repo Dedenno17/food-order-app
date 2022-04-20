@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 //pages
 import Cart from './components/Cart/Cart';
@@ -8,24 +8,14 @@ import Navbar from './components/Navbar/Navbar';
 
 function App() {
 
-  const [isShowModalCart, setIsShowModalCart] = useState(false) ;
-
-  const showModalCartHandler = () => {
-    setIsShowModalCart(prevState => {
-      if(prevState) {
-        return false;
-      } else {
-        return true;
-      }
-    });
-  }
+  const modalCart = useSelector(state => state.modalCart.modalCart);
 
   return (
     <div className="App">
-     <Navbar onShowModalCart={showModalCartHandler}/>
+     <Navbar/>
      <Hero />
      <Meals />
-     {isShowModalCart && <Cart onShowModalCart={showModalCartHandler}/>}
+     {modalCart && <Cart />}
     </div>
   );
 }
