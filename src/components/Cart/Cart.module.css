@@ -1,5 +1,5 @@
 .cart {
-    width: 60%;
+    width: 50%;
     padding: 20px;
 }
 
@@ -17,9 +17,18 @@
 
 .btn {
     width: 100%;
+    display: flex;
     justify-content: flex-end;
 }
 
 .btn button:last-child {
+    font-size: 1.2rem;
     margin-left: 20px;
+}
+
+.btn button:first-child {
+    background-color: transparent;
+    color: #F5803B;
+    border: 1px solid #F5803B;
+    font-size: 1.2rem;
 }

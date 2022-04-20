@@ -14,7 +14,7 @@ const Background = props => {
 
 const ModalOverlays = props => {
     return (
-        <Card className={classes['modal-overlays']}>
+        <Card className={`${classes['modal-overlays']} ${props.style}`}>
             {props.children}
         </Card>
     );
@@ -27,7 +27,7 @@ const Modal = props => {
     return (
         <Fragment>
             {createPortal(<Background />, portals)}
-            {createPortal(<ModalOverlays>{props.children}</ModalOverlays>, portals)}
+            {createPortal(<ModalOverlays style={props.className}>{props.children}</ModalOverlays>, portals)}
         </Fragment>
     );
 }
