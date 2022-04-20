@@ -1,11 +1,11 @@
 .meals-item {
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     border-bottom: 1px solid #F5803B ;
     margin-top: 20px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .meals-item div:first-child {
@@ -17,7 +17,8 @@
 
 .meals-item div:first-child img {
     width: 100%;
-    transform: translateY(-10px);
+    height: 100%;
+    margin: auto;
 }
 
 .meals-item div:nth-child(2) {
