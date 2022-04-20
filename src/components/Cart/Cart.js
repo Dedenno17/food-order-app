@@ -29,7 +29,7 @@ const Cart = props => {
             </div>
             <div className={classes.btn}>
                 <Button onClick={() => dispatch(setModalCart(false))}>Close</Button>
-                <Button>Order</Button>
+                {orderedMeals.length === 0 ? '' : <Button>Order</Button>}
             </div>
         </Modal>
     );

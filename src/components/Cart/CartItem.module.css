@@ -3,6 +3,8 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F5803B;
 }
 
 .summary {
@@ -13,9 +15,15 @@
 }
 
 .price {
-    width: 100%;
+    width: 50%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price p {
+    font-size: 1.3rem;
 }
 
 .price span {
@@ -35,5 +43,13 @@
     border: 1px solid #F5803B;
     border-radius: 3px;
     color: #F5803B;
-    padding: 5px;
+    font-size: 1.5rem;
+    padding: 5px 20px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background-color: #F5803B;
+    color: #fff;
 }

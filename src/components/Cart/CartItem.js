@@ -6,7 +6,7 @@ const CartItem = props => {
             <div className={classes.summary}>
                 <h2>{props.name}</h2>
                 <span className={classes.price}>
-                    <p>${props.totalPrice}</p>
+                    <p>${props.totalPrice.toFixed(2)}</p>
                     <span>X {props.amount}</span>
                 </span>
             </div>

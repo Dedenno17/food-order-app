@@ -24,6 +24,7 @@
 .btn button:last-child {
     font-size: 1.2rem;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .btn button:first-child {
@@ -31,4 +32,14 @@
     color: #F5803B;
     border: 1px solid #F5803B;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn button:first-child:hover {
+    background-color: #F5803B;
+    color: #fff;
+}
+
+.btn button:last-child:hover {
+    filter: brightness(.90);
 }
