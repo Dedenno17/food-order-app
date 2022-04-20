@@ -2,7 +2,7 @@ import Button from '../UI/Button';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 
-const Cart = () => {
+const Cart = props => {
     return (
         <Modal className={classes.cart}>
             <ul>
@@ -12,7 +12,7 @@ const Cart = () => {
                 <h2>$34000</h2>
             </div>
             <div className={classes.btn}>
-                <Button>Close</Button>
+                <Button onClick={props.onShowModalCart}>Close</Button>
                 <Button>Order</Button>
             </div>
         </Modal>

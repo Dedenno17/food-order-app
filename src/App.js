@@ -11,7 +11,13 @@ function App() {
   const [isShowModalCart, setIsShowModalCart] = useState(false) ;
 
   const showModalCartHandler = () => {
-    setIsShowModalCart(true);
+    setIsShowModalCart(prevState => {
+      if(prevState) {
+        return false;
+      } else {
+        return true;
+      }
+    });
   }
 
   return (
@@ -19,7 +25,7 @@ function App() {
      <Navbar onShowModalCart={showModalCartHandler}/>
      <Hero />
      <Meals />
-     {isShowModalCart && <Cart />}
+     {isShowModalCart && <Cart onShowModalCart={showModalCartHandler}/>}
     </div>
   );
 }
