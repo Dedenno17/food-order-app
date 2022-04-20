@@ -4,10 +4,10 @@ const CartItem = props => {
     return (
         <li className={classes['cart-item']}>
             <div className={classes.summary}>
-                <h2>Name</h2>
+                <h2>{props.name}</h2>
                 <span className={classes.price}>
-                    <p>price</p>
-                    <span>X amount</span>
+                    <p>${props.totalPrice}</p>
+                    <span>X {props.amount}</span>
                 </span>
             </div>
             <div className={classes.actions}>
