@@ -1,15 +1,24 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import classes from './MealsItemForm.module.css';
 import Button from '../UI/Button';
+import { setBump } from '../../features/bump';
 
 const MealsItemForm = props => {
 
     const [amountValue, setAmountValue] = useState('');
+    const dispatch = useDispatch();
 
     const submitHandler = (e) => {
         e.preventDefault();
         props.onAddOrderedMeals(amountValue);
+        setAmountValue('');
+
+        dispatch(setBump(true));
+        setTimeout(() => {
+            dispatch(setBump(false));
+        }, 300)
     }
 
     return (
