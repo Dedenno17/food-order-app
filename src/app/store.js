@@ -4,6 +4,7 @@ import mealsReducer from '../features/meals';
 import modalCartReducer from '../features/modalCart';
 import orderedMealsReducer from '../features/orderedMeals';
 import bumpReducer from '../features/bump';
+import modalNotifReducer from '../features/modalNotif';
 
 export const store = configureStore({
   reducer: {
@@ -11,5 +12,6 @@ export const store = configureStore({
     modalCart: modalCartReducer,
     orderedMeals: orderedMealsReducer,
     bump: bumpReducer,
+    modalNotif: modalNotifReducer,
   },
 });

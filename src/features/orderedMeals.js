@@ -46,11 +46,15 @@ export const orderedMealsSlice = createSlice({
                 }
             }
 
+        },
+
+        setOrder : (state) => {
+            state.orderedMeals = [];
         }
 
     }
 });
 
-export const {addOrder, removeOrder} = orderedMealsSlice.actions;
+export const {addOrder, removeOrder, setOrder} = orderedMealsSlice.actions;
 
 export default orderedMealsSlice.reducer;

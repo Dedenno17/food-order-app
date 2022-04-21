@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import classes from './MealsItemForm.module.css';
 import Button from '../UI/Button';
 import { setBump } from '../../features/bump';
+import { setModalNotif } from '../../features/modalNotif';
 
 const MealsItemForm = props => {
 
@@ -12,6 +13,23 @@ const MealsItemForm = props => {
 
     const submitHandler = (e) => {
         e.preventDefault();
+
+        if( amountValue.trim().length === 0 ) {
+            dispatch(setModalNotif({
+                status: true,
+                message: 'You not entered the amount yet!!'
+            }))
+
+            const timeOut = setTimeout(() => {
+                dispatch(setModalNotif({
+                    status: false,
+                    message: 'You not entered the amount yet!!'
+                })) 
+                clearTimeout(timeOut);
+            },2800);
+            return;
+        }
+
         props.onAddOrderedMeals(amountValue);
         setAmountValue('');
 

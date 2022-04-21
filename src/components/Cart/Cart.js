@@ -1,8 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {setModalCart} from '../../features/modalCart'
+import { setModalNotif } from '../../features/modalNotif';
+import {setOrder} from '../../features/orderedMeals'
+
 
 import Button from '../UI/Button';
-import Modal from '../UI/Modal';
+import ModalCart from '../UI/ModalCart';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 
@@ -13,8 +16,25 @@ const Cart = props => {
 
     const totalAmount = orderedMeals.map(meal => parseInt(meal.totalPrice)).reduce((acc, curr) => acc + curr, 0);
 
+    const orderHandler = () => {
+        dispatch(setOrder());
+        dispatch(setModalCart(false));
+        dispatch(setModalNotif({
+            status: true,
+            message: 'Your meals are in process'
+        }))
+
+        const timeOut = setTimeout(() => {
+            dispatch(setModalNotif({
+                status: false,
+                message: 'You not entered the amount yet!!'
+            })) 
+            clearTimeout(timeOut);
+        },2800);
+    }
+
     return (
-        <Modal className={classes.cart}>
+        <ModalCart className={classes.cart}>
             <ul>
                 {orderedMeals.map(meal => 
                     <CartItem 
@@ -32,9 +52,9 @@ const Cart = props => {
             </div>
             <div className={classes.btn}>
                 <Button onClick={() => dispatch(setModalCart(false))}>Close</Button>
-                {orderedMeals.length === 0 ? '' : <Button>Order</Button>}
+                {orderedMeals.length === 0 ? '' : <Button onClick={orderHandler}>Order</Button>}
             </div>
-        </Modal>
+        </ModalCart>
     );
 };
 

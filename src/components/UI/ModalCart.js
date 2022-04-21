@@ -31,7 +31,7 @@ const ModalOverlays = props => {
 
 const portals = document.getElementById('modal');
 
-const Modal = props => {
+const ModalCart = props => {
     return (
         <Fragment>
             {createPortal(<Background />, portals)}
@@ -40,4 +40,4 @@ const Modal = props => {
     );
 }
  
-export default Modal;
+export default ModalCart;
