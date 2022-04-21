@@ -13,7 +13,7 @@ const MealsItem = props => {
             id : props.id,
             name: props.name,
             totalPrice: props.price * amountValue,
-            amount: amountValue
+            amount: parseInt(amountValue)
         }
 
         dispatch(addMeals(newOrderedMeals));
