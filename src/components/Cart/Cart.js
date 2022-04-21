@@ -19,6 +19,7 @@ const Cart = props => {
                 {orderedMeals.map(meal => 
                     <CartItem 
                         key={meal.id}
+                        id={meal.id}
                         name={meal.name}
                         totalPrice={meal.totalPrice}
                         amount={meal.amount}

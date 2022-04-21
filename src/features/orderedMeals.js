@@ -6,7 +6,7 @@ export const orderedMealsSlice = createSlice({
     name: 'orderedMeals',
     initialState: {orderedMeals: initialStateValue},
     reducers: {
-        addMeals: (state, action) => {
+        addOrder: (state, action) => {
 
             if(state.orderedMeals.length === 0) {
                 state.orderedMeals.push(action.payload);
@@ -31,11 +31,12 @@ export const orderedMealsSlice = createSlice({
                 state.orderedMeals.push(action.payload);
             }
 
+        },
 
-        }
+
     }
 });
 
-export const {addMeals} = orderedMealsSlice.actions;
+export const {addOrder} = orderedMealsSlice.actions;
 
 export default orderedMealsSlice.reducer;

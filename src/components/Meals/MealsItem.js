@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addMeals } from '../../features/orderedMeals';
+import { addOrder } from '../../features/orderedMeals';
 
 import classes from './MealsItem.module.css';
 import MealsItemForm from './MealsItemForm';
@@ -16,7 +16,7 @@ const MealsItem = props => {
             amount: parseInt(amountValue)
         }
 
-        dispatch(addMeals(newOrderedMeals));
+        dispatch(addOrder(newOrderedMeals));
     }
 
 
