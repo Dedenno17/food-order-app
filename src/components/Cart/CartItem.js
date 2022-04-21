@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addOrder } from '../../features/orderedMeals';
+import { addOrder, removeOrder } from '../../features/orderedMeals';
 
 
 import classes from './CartItem.module.css';
@@ -19,6 +19,10 @@ const CartItem = props => {
         dispatch(addOrder(newOrderedMeals));
     }
 
+    const removeOrderedMealsHandler = (id) => {
+        dispatch(removeOrder(id));
+    }
+
     return (
         <li className={classes['cart-item']}>
             <div className={classes.summary}>
@@ -30,7 +34,7 @@ const CartItem = props => {
             </div>
             <div className={classes.actions}>
                 <button onClick={addOrderedMealsHandler}>+</button>
-                <button>-</button>
+                <button onClick={() => removeOrderedMealsHandler(props.id)}>-</button>
             </div>
         </li>
     );

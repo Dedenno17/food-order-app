@@ -16,14 +16,14 @@ export const orderedMealsSlice = createSlice({
                         const updatedTotalPrice = (state.orderedMeals[i].totalPrice / state.orderedMeals[i].amount) * (state.orderedMeals[i].amount + action.payload.amount);
                         const updatedAmount = state.orderedMeals[i].amount + action.payload.amount;
 
-                        const updatedList = {
+                        const updatedMeal = {
                             id: action.payload.id,
                             name: action.payload.name,
                             totalPrice: updatedTotalPrice,
                             amount: updatedAmount
                         }
 
-                        state.orderedMeals[i] = updatedList;
+                        state.orderedMeals[i] = updatedMeal;
                         return;
                     }
                 }
@@ -33,10 +33,24 @@ export const orderedMealsSlice = createSlice({
 
         },
 
+        removeOrder : (state, action) => {
+            
+            for(let i = 0; i < state.orderedMeals.length; i++) {
+                if( state.orderedMeals[i].id === action.payload ) {
+
+                    const updatedTotalPrice = (state.orderedMeals[i].totalPrice / state.orderedMeals[i].amount) * (state.orderedMeals[i].amount - 1);
+                    const updatedAmount = state.orderedMeals[i].amount - 1;
+
+                    state.orderedMeals[i].totalPrice = updatedTotalPrice;
+                    state.orderedMeals[i].amount = updatedAmount;
+                }
+            }
+
+        }
 
     }
 });
 
-export const {addOrder} = orderedMealsSlice.actions;
+export const {addOrder, removeOrder} = orderedMealsSlice.actions;
 
 export default orderedMealsSlice.reducer;
