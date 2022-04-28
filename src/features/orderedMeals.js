@@ -40,9 +40,14 @@ export const orderedMealsSlice = createSlice({
 
                     const updatedTotalPrice = (state.orderedMeals[i].totalPrice / state.orderedMeals[i].amount) * (state.orderedMeals[i].amount - 1);
                     const updatedAmount = state.orderedMeals[i].amount - 1;
-
-                    state.orderedMeals[i].totalPrice = updatedTotalPrice;
-                    state.orderedMeals[i].amount = updatedAmount;
+    
+                    if( updatedAmount === 0 ) {
+                        const newOrdered = state.orderedMeals.filter(meal => meal.id !== state.orderedMeals[i].id);
+                        state.orderedMeals = newOrdered;
+                    } else {
+                        state.orderedMeals[i].totalPrice = updatedTotalPrice;
+                        state.orderedMeals[i].amount = updatedAmount;
+                    }
                 }
             }
 
